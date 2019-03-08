@@ -4,10 +4,10 @@ The Prettier config that we use internally.
 
 ## USAGE
 
-1. Add dependency:
+1. Add dependencies:
 
 ```
-yarn add --dev prettier-config-aux
+yarn add --dev prettier prettier-config-aux
 ```
 
 2. Create `prettier.config.js` in `./`:
