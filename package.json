@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "description": "The Prettier config that we use internally",
   "keywords": [
-    "eslint",
-    "eslintconfig",
     "prettier",
     "prettierconfig"
   ],
