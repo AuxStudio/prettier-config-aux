@@ -1,6 +1,6 @@
 {
   "name": "prettier-config-aux",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The Prettier config that we use internally",
   "keywords": [
     "prettier",
