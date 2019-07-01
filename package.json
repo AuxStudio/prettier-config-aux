@@ -12,12 +12,23 @@
   "license": "MIT",
   "scripts": {
     "publish": "npm publish",
-    "postpublish": "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags"
+    "update-changelog": "yarn run auto-changelog && git add . && git commit -m 'Update Changelog' && git push",
+    "update-tags": "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags",
+    "postpublish": "yarn run update-changelog && yarn run update-tags"
   },
   "peerDependencies": {
     "prettier": "^1.16.4"
   },
   "dependencies": {
     "prettier": "^1.16.4"
+  },
+  "devDependencies": {
+    "auto-changelog": "^1.13.0"
+  },
+  "auto-changelog": {
+    "output": "CHANGELOG.md",
+    "template": "keepachangelog",
+    "unreleased": true,
+    "commitLimit": false
   }
 }
